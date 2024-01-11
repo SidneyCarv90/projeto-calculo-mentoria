@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício Soma</title>
+  </head>
+  <body>
+    <main>
+      <form id="form">
+        <input type="number" name="" id="numero1" />
+        <input type="number" name="" id="numero2" />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+
+    <script>
+      //Crie um algoritmo que faça a soma de dois valores e mostre o resultado
+
+      const formulario = document.getElementById("form");
+
+      const soma = function (input1, input2) {
+        return parseFloat(input1) + parseFloat(input2);
+      };
+
+      const createElement = function(input1, input2){
+        const main = document.querySelector('main');
+        const resultadoEl = document.createElement('h2');
+        resultadoEl.innerHTML =`Resultado = ${soma(input1, input2)}`;
+        main.append(resultadoEl);
+      }
+
+      const resultadoSoma = function(input1, input2){
+        soma(input1, input2);
+        createElement(input1, input2)
+      }
+
+      formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const input1 = document.getElementById("numero1").value;
+        const input2 = document.getElementById("numero2").value;
+
+        resultadoSoma(input1, input2);
+        
+        
+      });
+    </script>
+  </body>
+</html>
